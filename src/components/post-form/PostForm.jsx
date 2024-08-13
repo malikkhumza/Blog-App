@@ -1,7 +1,6 @@
 import React, { useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { Button, Input, Select, RTE } from "..";
-
 import appwriteService from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -42,6 +41,16 @@ export default function PostForm({ post }) {
                 const fileId = file.$id;
                 data.featuredImage = fileId;
                 const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
+
+                if (file) {
+    const fileId = file.$id;
+    data.featuredImage = fileId;
+    const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
+} else {
+    // Handle the case where file is undefined
+    console.error('File is undefined');
+}
+
 
                 if (dbPost) {
                     navigate(`/post/${dbPost.$id}`);

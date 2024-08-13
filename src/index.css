@@ -1,3 +1,7 @@
+@import '/public//fonts/font.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+

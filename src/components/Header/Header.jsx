@@ -39,17 +39,17 @@ const navItems = [
 ]
 
   return (
-    <header className='bg-gray-500 shadow py-3'>
+    <header className='bg-[#DFD8CA] shadow py-3'>
         <Container>
         <nav className='flex'>
           <div className='mr-4'>
           <Link>
-          <Logo width="100px" />
+          <Logo className='flex items-center justify-center' width="100px" />
           </Link>
 
           </div>
 
-          <ul className='flex ml-auto'>
+          <ul className='flex ml-auto font-custom text-4xl text-[#9D6C53]'>
             {
               navItems.map((item) => 
                 item.active ? (
